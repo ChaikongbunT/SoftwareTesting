@@ -1,3 +1,4 @@
+// Tanakorn
 import { test, expect } from '@playwright/test';
 
 test('TC-27: สร้างภาควิชาใหม่แต่ชื่อซ้ำ', async ({ page }) => {

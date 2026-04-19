@@ -1,6 +1,7 @@
+// Suwapich
 import { test, expect } from '@playwright/test';
 
-test('TC-65: นำเข้าไฟล์เงื่อนไขกรรมการคุมสอบ (.xlsx)', async ({ page }) => {
+test('TC-74: ตรวจสอบข้อมูลกรรมการคุมสอบ (.xlsx)', async ({ page }) => {
   await page.goto('https://project-superend-cen8.vercel.app/',);
   const USERNAME = 'Admin1';
   const PASSWORD = 'examroom@1234';

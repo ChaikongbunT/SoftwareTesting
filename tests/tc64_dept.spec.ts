@@ -1,3 +1,4 @@
+// Suwapich
 import { test, expect } from '@playwright/test';
 
 test('TC-64: สร้างภาควิชาใหม่', async ({ page }) => {
