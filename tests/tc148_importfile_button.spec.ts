@@ -10,7 +10,10 @@ test('TC-148: ตรวจสอบลิงค์ นำเข้าไฟล�
     await page.getByRole('textbox', { name: 'ใส่รหัสผ่านของคุณ' }).fill(PASSWORD);
     await page.getByRole('button', { name: 'ล็อกอิน' }).click();
 
-    await expect(page).toHaveURL(/.*Home/);
+    await Promise.all([
+        page.waitForURL(/.*Home/i, { timeout: 30000 }),
+        page.getByRole('button', { name: 'ล็อกอิน' }).click(),
+    ]);
 
     const menuButton = page.getByTitle('เปิดเมนู');
     await menuButton.click();

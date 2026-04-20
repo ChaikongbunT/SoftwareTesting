@@ -9,7 +9,6 @@ test('TC-35: ลบไฟล์ Excel ที่นำเข้าแล้ว', 
   await page.getByRole('textbox', { name: 'ใส่ชื่อบัญชีผู้ใช้' }).fill(USERNAME);
   await page.getByRole('textbox', { name: 'ใส่รหัสผ่านของคุณ' }).fill(PASSWORD);
   await page.getByRole('button', { name: 'ล็อกอิน' }).click();
-  await page.waitForNavigation();
 
   await page.getByRole('button', { name: 'เปิดเมนู' }).click();
   await page.getByRole('link', { name: 'นำเข้าไฟล์' }).click();

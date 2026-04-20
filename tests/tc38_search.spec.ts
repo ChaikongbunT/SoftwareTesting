@@ -9,9 +9,11 @@ test('TC-38: ลบรายวิชาค้นหาวิชาที่ไ�
   await page.getByRole('textbox', { name: 'ใส่ชื่อบัญชีผู้ใช้' }).fill(USERNAME);
   await page.getByRole('textbox', { name: 'ใส่รหัสผ่านของคุณ' }).fill(PASSWORD);
   await page.getByRole('button', { name: 'ล็อกอิน' }).click();
-  await page.waitForNavigation();
 
-  await expect(page).toHaveURL(/.*Home/);
+  await Promise.all([
+        page.waitForURL(/.*Home/i, { timeout: 30000 }),
+        page.getByRole('button', { name: 'ล็อกอิน' }).click(),
+    ]);
 
   await page.getByRole('button', { name: 'เปิดเมนู' }).click();
   await page.getByRole('link', { name: 'ดูรายละเอียดวิชา' }).click();
